@@ -20,11 +20,8 @@ function initializePage() {
  */
  function callback(result){
 	var id = result.id;
-	
-	var projectImage = '<a href="#" class="details" ">' +
-		'<img src="' + result['image']+ '"class="detailsImage"></a>';
-		
-	$("#project"+id+" .details").html( projectImage + '<p>' + result['title'] + '</p>'	+ '<p><small>' + result['date'] + '</small></p>' + result['summary']);
+
+	$("#project"+id+" .details").html( '<img src="' + result['image']+ '"class="detailsImage">' + '<p>' + result['title'] + '</p>'	+ '<p><small>' + result['date'] + '</small></p>' + result['summary']);
 	
  }
  
