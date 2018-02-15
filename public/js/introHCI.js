@@ -22,7 +22,7 @@ function initializePage() {
 	var id = result.id;
 
 	$("#project"+id+" .details").html( '<img src="' + result['image']+ '"class="detailsImage">' + '<p>' + result['title'] + '</p>'	+ '<p><small>' + result['date'] + '</small></p>' + result['summary']);
-	
+
  }
  
 function addProjectDetails(e) {
@@ -33,8 +33,10 @@ function addProjectDetails(e) {
 	var projectID = $(this).closest('.project').attr('id');
 	// get rid of 'project' from the front of the id 'project3'
 	var idNumber = projectID.substr('project'.length);
-
+	var obj;
+	history.pushState(obj, ""+projectID+"", "/project/"+idNumber+"");
 	$.get("/project/"+idNumber+"",callback);
+
 }
 
 
